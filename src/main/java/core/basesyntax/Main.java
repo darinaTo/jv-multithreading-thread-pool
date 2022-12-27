@@ -20,10 +20,10 @@ public class Main {
             futures.add(executorService.submit(thread));
         }
         executorService.shutdown();
-        for (Future<String> future : futures) {
+        for (Future<String> stringFuture : futures) {
             try {
-                future.get();
-                logger.info(future.get());
+                stringFuture.get();
+                logger.info(stringFuture.get());
             } catch (InterruptedException | ExecutionException e) {
                 throw new RuntimeException("Some exception was catch:", e);
             }
